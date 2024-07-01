@@ -89,7 +89,7 @@
               </span>
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                  <sup>1</sup> Peking University<br>
+                  <sup>1</sup> Peking University
                   <sup>2</sup> Huawei Cloud<br>
                   <!-- Submitted to NeurIPS2024 Dataset & Benchmark Track -->
                 </span>
@@ -289,13 +289,14 @@
             <p class="image-caption">(I) Critic model training process. We sample human motion pairs $\mathbf{x}^{(h)},
               \mathbf{x}^{(l)}$ annotated with human preferences, upon which the critic model produces score pairs. We
               use perceptual alignment loss $L_\text{Percept}$ to learn from the human perceptions.
-              % <br>
+              <br>
               (II) Motion generation with critic model supervision. We intercept MDM sampling process at random timestep
               $t$ and perform single-step prediction. Critic model computes the score $s$ based on the generated motion
               $\mathbf{x}_0'$, which is further used to calculate motion critic loss $L_\text{Critic}$.
-              %
+
               KL loss $L_\text{KL}$ is introduced between $\mathbf{x}_0'$ and last-time generation result
-              $\widetilde{\mathbf{x}_0}'$.</p>
+              $\widetilde{\mathbf{x}_0}'$.
+            </p>
           </div>
         </div>
       </div>
