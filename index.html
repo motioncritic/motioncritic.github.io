@@ -67,10 +67,10 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://ou524u.github.io/" target="_blank">Haoru Wang<sup>1</sup></a>
+                <a href="https://ou524u.github.io/" target="_blank">Haoru Wang<sup>1,†</sup></a>
               </span>
               <span class="author-block">
-                <a href="https://walter0807.github.io/" target="_blank">Wentao Zhu<sup>1</sup></a>
+                <a href="https://walter0807.github.io/" target="_blank">Wentao Zhu<sup>1,†</sup></a>
               </span>
               <span class="author-block">
                 <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Luyi Miao<sup>1</sup></a>
@@ -87,65 +87,64 @@
               <span class="author-block">
                 <a href="https://cfcs.pku.edu.cn/wangyizhou/" target="_blank">Yizhou Wang<sup>1</sup></a>
               </span>
-
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
                   <sup>1</sup> Peking University<br>
                   <sup>2</sup> Huawei Cloud<br>
-                  Submitted to NeurIPS2024 Dataset & Benchmark Track
+                  <!-- Submitted to NeurIPS2024 Dataset & Benchmark Track -->
                 </span>
               </div>
+              <div class="is-size-6">
+                <p><sup>†</sup> Lead author</p>
+              </div>
 
-              <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
-            </div>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- Arxiv PDF link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2404.09445v1" target="_blank" class="external-link ">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- Arxiv PDF link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank" class="external-link ">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
+                  <!-- Supplementary PDF link -->
+                  <!-- <span class="link-block">
+                    <a href="static/pdfs/supplementary_material.pdf" target="_blank" class="external-link ">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
 
-                <!-- Supplementary PDF link -->
-                <span class="link-block">
-                  <a href="static/pdfs/supplementary_material.pdf" target="_blank" class="external-link ">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Supplementary</span>
-                  </a>
-                </span>
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/ou524u/AlignHP" target="_blank" class="external-link ">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
 
-                <!-- Github link -->
-                <span class="link-block">
-                  <a href="https://github.com/ou524u/AlignHP" target="_blank" class="external-link ">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank" class="external-link ">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank" class="external-link ">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- 
@@ -205,48 +204,185 @@
   </section> 
   -->
 
-
   <!-- New section for images -->
-  <div class="image-wrapper">
-    <div class="image-item">
-      <img src="static/images/framework.png" alt="Framework" class="responsive-image">
-      <p class="image-caption">Framework Overview. We collect MotionPercept, a large-scale, human-annotated dataset for
-        motion perceptual evaluation, where human subjects select the best quality motion in multiple-choice questions.
-        Using this dataset, we train MotionCritic to automatically judge motion quality in alignment with human
-        perceptions,
-        offering better quality metrics. Additionally, we show that MotionCritic can enhance existing motion generators
-        with
-        minimal fine-tuning.</p>
-    </div>
-    <div class="image-item">
-      <img src="static/images/pipeline.png" alt="Pipeline" class="responsive-image">
-      <p class="image-caption">(I) Critic model training process. We sample human motion pairs $\mathbf{x}^{(h)},
-        \mathbf{x}^{(l)}$ annotated with human preferences, upon which the critic model produces score pairs. We use
-        perceptual alignment loss $L_\text{Percept}$ to learn from the human perceptions.
-
-
-        (II) Motion generation with critic model supervision. We intercept MDM sampling process at random timestep $t$
-        and perform single-step predict. Critic model computes the score $s$ based on the generated motion
-        $\mathbf{x}_0'$, which is further used to calculate motion critic loss $L_\text{Critic}$.
-        KL loss $L_\text{KL}$ is introduced between $\mathbf{x}_0'$ and last-time generation result
-        $\widetilde{\mathbf{x}_0}'$.</p>
+  <div class="image-wrapper section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Overview</h2>
+          <div class="image-item">
+            <img src="static/images/framework.png" alt="Framework" class="responsive-image">
+            <p class="image-caption">Framework Overview. We collect MotionPercept, a large-scale, human-annotated
+              dataset for
+              motion perceptual evaluation, where human subjects select the best quality motion in multiple-choice
+              questions.
+              Using this dataset, we train MotionCritic to automatically judge motion quality in alignment with human
+              perceptions,
+              offering better quality metrics. Additionally, we show that MotionCritic can enhance existing motion
+              generators
+              with
+              minimal fine-tuning.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Paper abstract -->
+  <!-- <section class="section hero is-light"> -->
+  <section class="section hero is-white">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>Human motion generation is a critical task with a wide spectrum of applications. Achieving high realism
+              in
+              generated motions requires naturalness, smoothness, and plausibility. However, current evaluation metrics
+              often rely on error with ground-truth, simple heuristics, or distribution distances and do not align well
+              with human perceptions. In this work, we propose a data-driven approach to bridge this gap by introducing
+              a large-scale human perceptual evaluation dataset, MotionPercept, and a human motion critic model,
+              MotionCritic, that
+              capture human perceptual preferences. Our critic model offers a more accurate metric for assessing motion
+              quality and could be readily integrated into the motion generation pipeline to enhance generation quality.
+              Extensive experiments demonstrate the effectiveness of our approach in both evaluating and improving the
+              quality of generated human motions by aligning with human perceptions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- MotionPercept section -->
+  <div class="image-wrapper section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">MotionPercept</h2>
+          <div class="image-item">
+            <p class="image-caption">We first introduce a large-scale human perceptual evaluation dataset,
+              MotionPercept.</p>
+          </div>
+          <div class="image-item">
+            <video src="static/videos/00-1.mp4" controls loop class="responsive-image"></video>
+            <p class="image-caption">
+              We implement a pipeline for data collection and annotation. First, we collect
+              generated human motion sequence pairs, and then instruct the annotators to select the best candidate. The
+              best option should be the most natural, visually pleasing, and free of artifacts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MotionCritic Section -->
+  <div class="image-wrapper section hero is-white">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">MotionCritic</h2>
+          <div class="image-item">
+            <img src="static/images/pipeline.png" alt="Pipeline" class="responsive-image">
+            <p class="image-caption">(I) Critic model training process. We sample human motion pairs $\mathbf{x}^{(h)},
+              \mathbf{x}^{(l)}$ annotated with human preferences, upon which the critic model produces score pairs. We
+              use perceptual alignment loss $L_\text{Percept}$ to learn from the human perceptions.
+              % <br>
+              (II) Motion generation with critic model supervision. We intercept MDM sampling process at random timestep
+              $t$ and perform single-step prediction. Critic model computes the score $s$ based on the generated motion
+              $\mathbf{x}_0'$, which is further used to calculate motion critic loss $L_\text{Critic}$.
+              %
+              KL loss $L_\text{KL}$ is introduced between $\mathbf{x}_0'$ and last-time generation result
+              $\widetilde{\mathbf{x}_0}'$.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="image-wrapper section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">MotionCritic as Motion Quality Metric</h2>
+          <div class="columns is-multiline">
+            <!-- First video and caption -->
+            <div class="column is-half">
+              <div class="video-item">
+                <video src="static/videos/04-1.mp4" controls autoplay class="responsive-video"></video>
+              </div>
+            </div>
+            <!-- Second video and caption -->
+            <div class="column is-half">
+              <div class="video-item">
+                <video src="static/videos/05-1.mp4" controls autoplay class="responsive-video"></video>
+              </div>
+            </div>
+            <p class="image-caption">The MotionCritic model scores motion based on human preference alignment and can
+              serve as a motion quality metric. Here, we present the results on the test set, demonstrating that the
+              critic score effectively reflects motion quality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="image-wrapper section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">MotionCritic as Training Supervision</h2>
+          <div class="image-item">
+            <p class="image-caption">We show that fine-tuning with our critic model significantly improves motion
+              quality with higher critic scores. Notably, this requires only a few hundred iterations, demonstrating the
+              effectiveness and efficiency of our method.</p>
+          </div>
+          <div class="image-item">
+            <video src="static/videos/01-1.mp4" controls loop class="responsive-image"></video>
+            <video src="static/videos/02-1.mp4" controls loop class="responsive-image"></video>
+            <video src="static/videos/03-1.mp4" controls loop class="responsive-image"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <style>
-    .image-wrapper {
+    .image-wrapper,
+    .section.hero.is-light {
+      padding: 3rem 1.5rem;
+      background-color: #f5f5f5;
+    }
+
+    .section.hero.is-white {
+      padding: 3rem 1.5rem;
+      background-color: #ffffff;
+    }
+
+    .container.is-max-desktop {
+      max-width: 960px;
+      margin: auto;
+    }
+
+    .columns.is-centered {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-top: 20px;
-      align-items: center;
-      /* Center align all items */
+      justify-content: center;
+    }
+
+    .column.is-four-fifths {
+      width: 90%;
     }
 
     .image-item {
-      text-align: center;
-      width: 80%;
-      /* Set a width to control the image and caption alignment */
+      text-align: left;
     }
 
     .responsive-image {
@@ -256,190 +392,31 @@
 
     .image-caption {
       margin-top: 10px;
-      font-size: 1.0em;
+      font-size: 1.2em;
       color: #000000;
       padding: 10px;
       background-color: rgba(1, 1, 1, 0);
-      /* Optional: add a background color for better visibility */
+      text-align: left;
+    }
+
+    .content {
+      font-size: 1.2em;
+    }
+
+    .title.is-3 {
+      font-size: 2em;
+      text-align: center;
+    }
+
+    .has-text-justified {
+      text-align: justify;
+    }
+
+    .has-text-centered {
       text-align: center;
     }
   </style>
 
-
-
-  <!-- Paper abstract -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit. -->
-              Human motion generation is a critical task with a wide spectrum of applications. Achieving high realism in
-              generated motions requires naturalness, smoothness, and plausibility. However, current evaluation metrics
-              often rely on error with ground-truth, simple heuristics, or distribution distances and do not align well
-              with human perceptions. In this work, we propose a data-driven approach to bridge this gap by introducing
-              a large-scale human perceptual evaluation dataset, MotionPercept, and a human motion critic model,
-              MotionCritic, that
-              capture human perceptual preferences. Our critic model offers a more accurate metric for assessing motion
-              quality and could be readily integrated into the motion generation pipeline to enhance generation quality.
-              Extensive experiments demonstrate the effectiveness of our approach in both evaluating and improving the
-              quality of generated human motions by aligning with human perceptions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End paper abstract -->
-
-
-  <!-- Image carousel -->
-  <!--    
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              First image description.
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Second image description.
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Third image description.
-            </h2>
-          </div>
-          <div class="item">
-            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT" />
-            <h2 class="subtitle has-text-centered">
-              Fourth image description.
-            </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- End image carousel -->
-
-
-
-
-  <!-- Youtube video -->
-  <!-- <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3">Video Presentation</h2>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-
-            <div class="publication-video">
-              <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> 
--->
-  <!-- End youtube video -->
-
-
-
-
-  <!-- Video carousel -->
-  <section class="hero is-small">
-    <div class="hero-body">
-      <div class="container">
-        <h2 class="title is-3">Video Results</h2>
-
-        <div id="results-carousel" class="carousel results-carousel">
-
-          <div class="item item-video1">
-            <video poster="" id="video1" autoplay controls muted loop height="100%">
-              <!-- Your video file here -->
-              <source src="static/videos/04.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video1">
-            <video poster="" id="video1" autoplay controls muted loop height="100%">
-              <!-- Your video file here -->
-              <source src="static/videos/05.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="item item-video1">
-            <video poster="" id="video1" autoplay controls muted loop height="100%">
-              <!-- Your video file here -->
-              <source src="static/videos/01.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video2">
-            <video poster="" id="video2" autoplay controls muted loop height="100%">
-              <!-- Your video file here -->
-              <source src="static/videos/02.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-video3">
-            <video poster="" id="video3" autoplay controls muted loop height="100%">\
-              <!-- Your video file here -->
-              <source src="static/videos/03.mp4" type="video/mp4">
-            </video>
-
-          </div>
-        </div>
-      </div>
-  </section>
-
-  <!-- End video carousel -->
-
-
-  <!-- Teaser video -->
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <h1 class="title has-text-centered">Video Presentation</h1>
-        <video poster="" id="tree" autoplay controls muted loop height="100%">
-          <!-- Your video here -->
-          <source src="static/videos/supp.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          <!-- some writing here -->
-          <!-- Human motion generation is a critical task with a wide spectrum of applications. However, current evaluation
-          metrics fail to align well with human perceptions. In this work, we propose a data-driven approach to bridge
-          this gap. -->
-        </h2>
-      </div>
-    </div>
-  </section>
-  <!-- End teaser video -->
-
-
-
-  <!-- Paper poster 
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-End paper poster -->
 
 
   <!--BibTex citation -->
