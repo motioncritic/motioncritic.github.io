@@ -212,7 +212,7 @@
           <h2 class="title is-3 has-text-centered">Overview</h2>
           <div class="image-item">
             <img src="static/images/framework.png" alt="Framework" class="responsive-image">
-            <p class="image-caption">Framework Overview. We collect MotionPercept, a large-scale, human-annotated
+            <p class="image-caption">We collect MotionPercept, a large-scale, human-annotated
               dataset for
               motion perceptual evaluation, where human subjects select the best quality motion in multiple-choice
               questions.
@@ -266,11 +266,29 @@
               MotionPercept.</p>
           </div>
           <div class="image-item">
-            <video src="static/videos/00-1.mp4" autoplay loop muted class="responsive-image"></video>
+
             <p class="image-caption">
               We implement a pipeline for data collection and annotation. First, we collect
               generated human motion sequence pairs, and then instruct the annotators to select the best candidate. The
               best option should be the most natural, visually pleasing, and free of artifacts.</p>
+            <video src="static/videos/00-1.mp4" autoplay loop muted class="responsive-image"></video>
+
+            <p class="image-caption">
+              We further test the generalization of our critic model on the GT motion distribution. We group the motions
+              in the HumanAct12 test set into five evenly distributed groups based on their critic scores, labeled GT-I
+              to GT-V from highest to lowest. The distribution of critic scores for GT motions is shown in the
+              histogram.</p>
+            <img src="static/images/histogram.png" alt="Framework" class="responsive-image">
+
+            <p class="image-caption">
+              We discover that the outliers with small critic values are indeed artifacts within the dataset, as shown
+              in the video. This demonstrates that MotionCritic can be used for dataset diagnosis.</p>
+            <video src="static/videos/06-1.mp4" autoplay loop muted class="responsive-image"></video>
+
+            <p class="image-caption">
+              We also compare the motions across the groups and find that critic scores align well with motion quality,
+              as confirmed by extensive user studies.</p>
+            <video src="static/videos/07-1.mp4" autoplay loop muted class="responsive-image"></video>
           </div>
         </div>
       </div>
