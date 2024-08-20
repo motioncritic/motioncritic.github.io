@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional visualizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;
+            justify-content: center;*/
+
+            background-color: #ffffff;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 10px;
+            font-size: 40px;
+            align-self: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .author {
+            margin: 10px 0;
+            font-size: 18px;
+            align-self: center;
+        }
+
+        .intro {
+            margin: 20px 0 20px 0;
+            font-size: 18px;
+            max-width: 1000px;
+            align-self: center;
+        }
+
+        .descript {
+            margin: 20px 0 20px 250px;
+            font-size: 20px;
+            max-width: 1000px;
+            align-self: left;
+            font-weight: bold;
+            color: #2a5ab4;
+        }
+
+        .video {
+            display: grid;
+            align-self: center;
+            grid-template-columns: repeat(2, 1fr);
+            /* 每行2个视频 */
+            gap: 10px;
+            /* 视频之间的间隔 */
+            width: 80%;
+            /* 控制容器宽度 */
+            max-width: 1200px;
+            /* 最大宽度 */
+        }
+
+        .video-item {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .video video {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .video-row {
+            margin-bottom: 40px;
+            width: 70%;
+            align-self: center;
+        }
+
+        .divider {
+            width: 80%;
+            border: 0;
+            height: 2px;
+            /* 控制分割线的粗细 */
+            background: linear-gradient(to right, #ffffff, #000000, #ffffff);
+            /* 渐变色：两头浅中间深 */
+            margin: 40px 0 0 0;
+            align-self: center;
+        }
+
+        .caption {
+            margin-top: 5px;
+            font-size: 20px;
+            text-align: left;
+            color: #000000;
+        }
+
+        table {
+            margin: 10px 0 10px 0;
+            width: 100%;
+            align-self: center;
+            border-collapse: collapse;
+            /* 合并边框 */
+        }
+
+        th,
+        td {
+            padding: 10px;
+            /* 单元格内边距 */
+            text-align: center;
+            /* 左对齐 */
+            border: none;
+            /* 移除边框 */
+        }
+
+        .vertical-header {
+            font-weight: bold;
+            /* 加粗文字 */
+            background-color: #ffffff;
+            /* 背景颜色 */
+            text-align: center;
+            /* 文字居中对齐 */
+        }
+
+        .vertical-header th {
+            width: 150px;
+            /* 设置纵向标题列的宽度 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Additional Visualizations</h1>
+    <!-- <div class="author">authors:</div> -->
+    <div class="intro">
+        We have already made all the data and code publicly available. In this page we will provide more visualizations
+        of the annotation and user study results, allowing others to form their own judgments.
+    </div>
+    <hr class="divider">
+    <!-- next section -->
+    <h1>Failure Cases on MotionPercept Test Sets</h1>
+    <div class="intro">
+        In this part, we will show pairs of videos from MotionPercept test set, on which MotionCritic scores failed to
+        align with annotators' choice. We visualize some of the typical failure cases.
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_2_561.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.3921164274215698</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_2_561.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: 1.4256486892700195</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_6_144.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.5564844608306885</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_6_144.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: 0.7016932368278503</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_9_319.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.7787001132965088</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_9_319.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: -1.550081133842468</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_13_148.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.570113658905029</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_13_148.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: -4.219339847564697</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_19_88.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.203836917877197</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_19_88.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: -3.661419868469238</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_23_61.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.4739679098129272</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_23_61.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: -0.876005589962005</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_25_137.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.5355678796768188</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_25_137.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: 2.1688623428344727</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_27_496.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.113068103790283</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_27_496.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: -2.419986009597778</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_28_85.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 2.1891517639160156</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_28_85.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: 2.8887038230895996</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="descript">motion_better (left) VS motion_worse (right) :</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/better_31_12.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 5.7557806968688965</p>
+                <p style="color: red;"><b>User preference: Better</b></p>
+                </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_necessary/failures/worse_31_12.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color:blue;"><b>Critic score: 6.499698162078857</b></p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
