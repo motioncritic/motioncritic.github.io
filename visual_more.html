@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;
+            justify-content: center;*/
+
+            background-color: #ffffff;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 10px;
+            font-size: 40px;
+            align-self: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .author {
+            margin: 10px 0;
+            font-size: 18px;
+            align-self: center;
+        }
+
+        .intro {
+            margin: 20px 0 20px 0;
+            font-size: 18px;
+            max-width: 1000px;
+            align-self: center;
+        }
+
+        .descript {
+            margin: 20px 0 20px 250px;
+            font-size: 20px;
+            max-width: 1000px;
+            align-self: left;
+            font-weight: bold;
+            color: #2a5ab4;
+        }
+
+        .video {
+            display: grid;
+            align-self: center;
+            grid-template-columns: repeat(2, 1fr);
+            /* 每行2个视频 */
+            gap: 10px;
+            /* 视频之间的间隔 */
+            width: 80%;
+            /* 控制容器宽度 */
+            max-width: 1200px;
+            /* 最大宽度 */
+        }
+
+        .video-item {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .video video {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .video-row {
+            margin-bottom: 40px;
+            width: 70%;
+            align-self: center;
+        }
+
+        .divider {
+            width: 80%;
+            border: 0;
+            height: 2px;
+            /* 控制分割线的粗细 */
+            background: linear-gradient(to right, #ffffff, #000000, #ffffff);
+            /* 渐变色：两头浅中间深 */
+            margin: 40px 0 0 0;
+            align-self: center;
+        }
+
+        .caption {
+            margin-top: 5px;
+            font-size: 20px;
+            text-align: left;
+            color: #000000;
+        }
+
+        table {
+            margin: 10px 0 10px 0;
+            width: 100%;
+            align-self: center;
+            border-collapse: collapse;
+            /* 合并边框 */
+        }
+
+        th,
+        td {
+            padding: 10px;
+            /* 单元格内边距 */
+            text-align: center;
+            /* 左对齐 */
+            border: none;
+            /* 移除边框 */
+        }
+
+        .vertical-header {
+            font-weight: bold;
+            /* 加粗文字 */
+            background-color: #ffffff;
+            /* 背景颜色 */
+            text-align: center;
+            /* 文字居中对齐 */
+        }
+
+        .vertical-header th {
+            width: 150px;
+            /* 设置纵向标题列的宽度 */
+        }
+    </style>
+</head>
+
+<body>
+    <hr class="divider">
+    <h1>Annotation Results from MotionPercept Dataset</h1>
+    <div class="intro">
+        In this part, we will show results from MotionPercept Dataset, including videos of four motions, the original
+        text description and the annotator's evaluation result.
+    </div>
+    <div class="descript">mdma-100-00-04-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdma-100-00-04-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Warm-up</b></p>
+                <p style="color: red;"><b>Annnotation result: C</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-132-02-02-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdma-132-02-02-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Run</b></p>
+                <p style="color: red;"><b>Annnotation result: D</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-191-11-03-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdma-191-11-03-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Throw</b></p>
+                <p style="color: red;"><b>Annnotation result: C</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdmu-130-35-00-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdmu-130-35-00-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Rope-skipping</b></p>
+                <p style="color: red;"><b>Annnotation result: A</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdmu-s01-12-01-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdmu-s01-12-01-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description:Punching</b></p>
+                <p style="color: red;"><b>Annnotation result: C</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdmu-s03-06-01-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdmu-s03-06-01-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Left-stretching</b></b></p>
+                <p style="color: red;"><b>Annnotation result: C</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-100-03-02-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdma-100-03-02-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Jump</b></b></p>
+                <p style="color: red;"><b>Annnotation result: B</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-135-07-03-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdma-135-07-03-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Eat</b></b></p>
+                <p style="color: red;"><b>Annnotation result: D</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-194-11-01-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdma-194-11-01-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Throw</b></b></p>
+                <p style="color: red;"><b>Annnotation result: D</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-143-08-00-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/annotation/mdma-143-08-00-ABCD.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Text description: Turn-steering-wheel</b></b></p>
+                <p style="color: red;"><b>Annnotation result: D</b></p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <h1>Annotation Results On the Test Set</h1>
+    <div class="intro">
+        In this part, we will show videos of four motions, annotation results, scores given by MotionCritic and
+        corresponding values of other metrics.
+    </div>
+    <div class="descript">mdma-107-04-02-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdma-107-04-02-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th style="color: red"><b>C</b></th>
+                        <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td>-0.7886</td>
+                        <td>-4.8514</td>
+                        <td style="color: blue"><b>0.4993</b></td>
+                        <td>-2.0689</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td>2.569e-5</td>
+                        <td>6.449e-5</td>
+                        <td style="color: blue"><b>1.232e-5</b></td>
+                        <td>3.187e-5</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td>0.00039</td>
+                        <td>0.00060</td>
+                        <td style="color: blue"><b>0.00027</b></td>
+                        <td>0.00080</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Drink</b></b></p>
+                <p style="color: red"><b>Annnotation result: C</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdmu-s64-11-01-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdmu-s64-11-01-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th style="color: red"><b>C</b></th>
+                        <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td>-9.1875</td>
+                        <td>-8.0678</td>
+                        <td style="color: blue"><b>4.8846</b></td>
+                        <td>1.4563</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td style="color: blue"><b>3.601e-6</b></td>
+                        <td>3.043e-4</td>
+                        <td>4.813e-5</td>
+                        <td>1.025e-4</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td>0.00058</td>
+                        <td style="color: blue"><b>0.00051</b></td>
+                        <td>0.00057</td>
+                        <td>0.00055</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Pulling-chest-expanders</b></b></p>
+                <p style="color:red;"><b>Annnotation result: C</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-s84-01-00-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdma-s84-01-00-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th style="color: red"><b>D</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td>-4.4318</td>
+                        <td>-3.4696</td>
+                        <td>-6.5542</td>
+                        <td style="color: blue;"><b>2.2963</b></td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td>1.045e-3</td>
+                        <td style="color: blue;"><b>2.793e-4</b></td>
+                        <td>2.975e-4</td>
+                        <td>2.958e-4</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td style="color: blue;"><b>0.00031</b></td>
+                        <td>0.00054</td>
+                        <td>0.00049</td>
+                        <td>0.00043</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Walk</b></b></p>
+                <p style="color: red;"><b>Annnotation result: D</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-131-10-00-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdma-131-10-00-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th style="color: red"><b>D</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td>-2.1850</td>
+                        <td>1.5277</td>
+                        <td>-0.6620</td>
+                        <td style="color: blue;"><b>3.8842</b></td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td>3.111e-5</td>
+                        <td>2.580e-5</td>
+                        <td>1.903e-4</td>
+                        <td style="color: blue;"><b>1.165e-5</b></td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF</th>
+                        <td>0.00064</td>
+                        <td>0.00065</td>
+                        <td style="color: blue;"><b>0.00037</b></td>
+                        <td>0.00073</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Boxing</b></b></p>
+                <p style="color: red;"><b>Annnotation result: D</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdmu-112-09-00-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdmu-112-09-00-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th style="color: red"><b>D</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td>0.8814</td>
+                        <td>-5.0319</td>
+                        <td>0.0365</td>
+                        <td style="color: blue;"><b>1.3240</b></td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td>3.532e-5</td>
+                        <td>3.245e-4</td>
+                        <td style="color: blue;"><b>3.503e-5</b></td>
+                        <td>2.693e-4</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td style="color: blue;"><b>0.00039</b></td>
+                        <td>0.00042</td>
+                        <td>0.00040</td>
+                        <td>0.00041</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Rotation-clapping</b></b></p>
+                <p style="color: red;"><b>Annnotation result: D</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-s52-07-01-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdma-s52-07-01-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th style="color: red"><b>A</b></th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td style="color: blue;"><b>0.6195</b></td>
+                        <td>-2.6155</td>
+                        <td>-2.6123</td>
+                        <td>-2.1859</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td style="color: blue;"><b>1.292e-6</b></td>
+                        <td>8.174e-6</td>
+                        <td>8.254e-6</td>
+                        <td>5.938e-6</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td>0.00062</td>
+                        <td>0.00107</td>
+                        <td>0.00107</td>
+                        <td style="color: blue;"><b>0.00022</b></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Eat</b></b></p>
+                <p style="color: red;"><b>Annnotation result: A</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdma-s51-01-01-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdma-s51-01-01-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th style="color: red"><b>C</b></th>
+                        <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td>-4.3979</td>
+                        <td>-4.3952</td>
+                        <td style="color: blue;"><b>0.2009</b></td>
+                        <td>-4.4393</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td style="color: blue;"><b>1.056e-3</b></td>
+                        <td>1.044e-3</td>
+                        <td>3.007e-4</td>
+                        <td>1.059e-3</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td>0.00062</td>
+                        <td>0.00107</td>
+                        <td>0.00107</td>
+                        <td style="color: blue;"><b>0.00022</b></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Eat</b></b></p>
+                <p style="color: red;"><b>Annnotation result: C</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdmu-100-26-01-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdmu-100-26-01-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th style="color: red"><b>A</b></th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td style="color: blue;"><b>-0.9983</b></td>
+                        <td>-12.1793</td>
+                        <td>-3.6499</td>
+                        <td>-10.8046</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td style="color: blue;"><b>7.699e-5</b></td>
+                        <td>5.269e-4</td>
+                        <td>5.075e-4</td>
+                        <td>6.801e-4</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td style="color: blue;"><b>0.00042</b></td>
+                        <td>0.00052</td>
+                        <td>0.00048</td>
+                        <td>0.00049</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Dumbbell-side-bend</b></b></p>
+                <p style="color: red;"><b>Annnotation result: A</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdmu-s16-16-01-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdmu-s16-16-01-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th style="color: red"><b>D</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td>-7.3115</td>
+                        <td>-4.5203</td>
+                        <td>-3.3664</td>
+                        <td style="color: blue;"><b>-0.6248</b></td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td>4.820e-5</td>
+                        <td>6.480e-5</td>
+                        <td>7.905e-5</td>
+                        <td style="color: blue;"><b>2.555e-5</b></td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td>0.00091</td>
+                        <td>0.00077</td>
+                        <td style="color: blue;"><b>0.00056</b></td>
+                        <td>0.00062</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Elbow-circling</b></b></p>
+                <p style="color: red;"><b>Annnotation result: D</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">mdmu-s22-33-00-ABCD.mp4:</div>
+    <div class="video-row">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/test_annotation/mdmu-s22-33-00-ABCD.mp4" type="video/mp4">
+            </video>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="vertical-header">Metrics</th>
+                        <th>A</th>
+                        <th style="color: red"><b>B</b></th>
+                        <th>C</th>
+                        <th>D</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="vertical-header">Critic score &#8593</th>
+                        <td>-2.8390</td>
+                        <td style="color: blue;"><b>0.8926</b></td>
+                        <td>-4.1106</td>
+                        <td>-2.1317</td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PFC &#8595</th>
+                        <td>1.047e-3</td>
+                        <td>8.792e-4</td>
+                        <td>2.307e-3</td>
+                        <td style="color: blue;"><b>8.646e-4</b></td>
+                    </tr>
+                    <tr>
+                        <th class="vertical-header">PoseNDF &#8595</th>
+                        <td>0.00049</td>
+                        <td>0.00059</td>
+                        <td style="color: blue;"><b>0.00040</b></td>
+                        <td>0.00042</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">
+                <p><b>Text description: Alternate-knee-lifting</b></b></p>
+                <p style="color: red;"><b>Annnotation result: B</b></p>
+            </div>
+        </div>
+    </div>
+    <hr class="divider">
+
+    <h1>User Study Results of Different Fintuning Steps</h1>
+    <div class="intro">
+        In this part, we will show pairs of videos of different finetuning steps, the corresponding scores given by
+        MotionCritic and user preference.
+    </div>
+    <div class="descript">step_0 (left) VS step_200 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/1-4/step0-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -13.18</p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/1-4/step200-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.79</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_200</b></p>
+    </div>
+
+    <div class="descript">step_200 (left) VS step_400 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/1-4/step200-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.79</p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/1-4/step400-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 2.21</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_400</b></p>
+    </div>
+
+    <div class="descript">step_400 (left) VS step_600 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/1-4/step400-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 2.21</p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/1-4/step600-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 4.45</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_400</b></p>
+    </div>
+
+    <div class="descript">step_600 (left) VS step_800 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/1-4/step600-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 4.45 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/1-4/step800-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 6.58</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_800</b></p>
+    </div>
+
+    <div class="descript">step_0 (left) VS step_100 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/9-5/step0-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.49 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/9-5/step100-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.79</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_100</b></p>
+    </div>
+
+    <div class="descript">step_100 (left) VS step_300 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/9-5/step100-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.79 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/9-5/step300-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.605</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_300</b></p>
+    </div>
+
+    <div class="descript">step_300 (left) VS step_500 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/9-5/step300-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.605 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/9-5/step500-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.63</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_500</b></p>
+    </div>
+
+    <div class="descript">step_500 (left) VS step_700 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/9-5/step500-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.63 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/9-5/step700-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 8.73</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_700</b></p>
+    </div>
+
+    <div class="descript">step_0 (left) VS step_200 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample11/step0-sample11-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.696 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample11/step200-sample11-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.968</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_200</b></p>
+    </div>
+
+    <div class="descript">step_200 (left) VS step_400 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample11/step200-sample11-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.968 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample11/step400-sample11-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.731</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_400</b></p>
+    </div>
+
+    <div class="descript">step_400 (left) VS step_600 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample11/step400-sample11-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.731 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample11/step600-sample11-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.0063</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_600</b></p>
+    </div>
+
+    <div class="descript">step_600 (left) VS step_800 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample11/step600-sample11-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.0063 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample11/step800-sample11-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.468</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_800</b></p>
+    </div>
+
+    <div class="descript">step_0 (left) VS step_200 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample3/step0-sample3-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -8.741 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample3/step200-sample3-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.579</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_200</b></p>
+    </div>
+
+    <div class="descript">step_200 (left) VS step_400 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample3/step200-sample3-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.579 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample3/step400-sample3-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.173</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_400</b></p>
+    </div>
+
+    <div class="descript">step_400 (left) VS step_600 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample3/step400-sample3-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.173 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample3/step600-sample3-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 4.305</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_600</b></p>
+    </div>
+
+    <div class="descript">step_600 (left) VS step_800 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample3/step600-sample3-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 4.305 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample3/step800-sample3-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 4.368</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_800</b></p>
+    </div>
+
+    <div class="descript">step_0 (left) VS step_200 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample4/step0-sample4-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.306 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample4/step200-sample4-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.053</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_200</b></p>
+    </div>
+
+    <div class="descript">step_200 (left) VS step_400 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample4/step200-sample4-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.053 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample4/step400-sample4-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.294</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_400</b></p>
+    </div>
+
+    <div class="descript">step_0 (left) VS step_200 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample4/step400-sample4-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.294 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample4/step600-sample4-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.989</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: similar</b></p>
+    </div>
+
+    <div class="descript">step_600 (left) VS step_800 (right) :</div>
+    <div class="video">
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample4/step600-sample4-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.989 </p>
+            </div>
+        </div>
+
+        <div class="video-item">
+            <video autoplay loop controls muted>
+                <source src="videos_more/finetune_user_study/sample4/step800-sample4-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 3.045</p>
+            </div>
+        </div>
+    </div>
+    <div class="descript">
+        <p style="color:red"><b>User preference: step_800</b></p>
+    </div>
+
+    <hr class="divider">
+
+
+
+</body>
+
+</html>
