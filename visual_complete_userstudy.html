@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional visualizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;
+            justify-content: center;*/
+
+            background-color: #ffffff;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 10px;
+            font-size: 40px;
+            align-self: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .author {
+            margin: 10px 0;
+            font-size: 18px;
+            align-self: center;
+        }
+
+        .intro {
+            margin: 20px 0 20px 0;
+            font-size: 18px;
+            max-width: 1000px;
+            align-self: center;
+        }
+
+        .descript {
+            margin: 20px 0 20px 250px;
+            font-size: 20px;
+            max-width: 1000px;
+            align-self: left;
+            font-weight: bold;
+            color: #2a5ab4;
+        }
+
+        .video {
+            display: grid;
+            align-self: center;
+            grid-template-columns: repeat(2, 1fr);
+            /* 每行2个视频 */
+            gap: 10px;
+            /* 视频之间的间隔 */
+            width: 80%;
+            /* 控制容器宽度 */
+            max-width: 1200px;
+            /* 最大宽度 */
+        }
+
+        .video-item {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .video video {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .video-row {
+            margin-bottom: 40px;
+            width: 70%;
+            align-self: center;
+        }
+
+        .divider {
+            width: 80%;
+            border: 0;
+            height: 2px;
+            /* 控制分割线的粗细 */
+            background: linear-gradient(to right, #ffffff, #000000, #ffffff);
+            /* 渐变色：两头浅中间深 */
+            margin: 40px 0 0 0;
+            align-self: center;
+        }
+
+        .caption {
+            margin-top: 5px;
+            font-size: 20px;
+            text-align: left;
+            color: #000000;
+        }
+
+        table {
+            margin: 10px 0 10px 0;
+            width: 100%;
+            align-self: center;
+            border-collapse: collapse;
+            /* 合并边框 */
+        }
+
+        th,
+        td {
+            padding: 10px;
+            /* 单元格内边距 */
+            text-align: center;
+            /* 左对齐 */
+            border: none;
+            /* 移除边框 */
+        }
+
+        .vertical-header {
+            font-weight: bold;
+            /* 加粗文字 */
+            background-color: #ffffff;
+            /* 背景颜色 */
+            text-align: center;
+            /* 文字居中对齐 */
+        }
+
+        .vertical-header th {
+            width: 150px;
+            /* 设置纵向标题列的宽度 */
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- next section hier -->
+    <h1>User Study Results between HumanAct12 GT and MDM Samples</h1>
+    <div class="intro">
+        In this part, we will show all 120 pairs of videos of from HumanAct12 ground truth dataset, and the generated
+        samples of
+        MDM pre-trained model, on which we've conducted additional user study.
+    </div>
+
+
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.792475461959839</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.5006689429283142</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.271370887756348</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.1000947952270508</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.8406161069869995</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.3574358224868774</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.636351108551025</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -3.5129644870758057</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.2413673400878906</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.5503755807876587</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.343761920928955</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.1877945363521576</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.6534669399261475</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.1399389505386353</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.1141772270202637</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 2.6721441745758057</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.062313079833984</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 2.643319606781006</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_0"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt0-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.862419068813324</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample0-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.2300496101379395</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -3.8970935344696045</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.357995510101318</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.8723392486572266</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.1957728862762451</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -4.589587211608887</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.4257073402404785</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -8.53761100769043</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -6.41676664352417</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.0357474088668823</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -13.180315971374512</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.6075599789619446</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.3082327842712402</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.9449835419654846</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -10.316720008850098</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.7678505182266235</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 2.4083943367004395</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.09042644500732422</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.5836546421051025</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_1"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt1-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.8254756927490234</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample1-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.0138120651245117</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -5.65397310256958</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.5003825426101685</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.974989652633667</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.374026298522949</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.6346893310546875</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 2.5970802307128906</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.3573079109191895</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -5.542504787445068</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.7869004011154175</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.14483626186847687</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.862194538116455</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.989664614200592</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.3348926305770874</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.6787742376327515</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.5946340560913086</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.002778797410428524</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.4739227294921875</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.5921446681022644</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_2"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt2-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.8742552399635315</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample2-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.3469477891921997</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -8.831475257873535</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -8.740887641906738</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.462158441543579</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.90449059009552</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -7.185272216796875</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 3.6879420280456543</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.3624486923217773</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.1463450193405151</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.1470894813537598</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 3.2989437580108643</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.646136999130249</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 2.3445546627044678</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.7017599940299988</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.21890634298324585</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.9351439476013184</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.8597761988639832</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.9616336822509766</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.5523638725280762</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_3"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt3-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 2.03745698928833</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample3-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.142821192741394</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.6989359855651855</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.11064531654119492</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.8325954079627991</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.5094590187072754</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.1605753898620605</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.7450497150421143</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.605773448944092</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.39529433846473694</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.3778200149536133</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.26258742809295654</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.1683504581451416</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.418657064437866</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.204521894454956</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.6556179523468018</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.7613775730133057</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.5751757621765137</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.139426589012146</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.305605411529541</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_4"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt4-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.05924156308174133</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample4-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.9428571462631226</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.444880962371826</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.2263902425765991</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.681056261062622</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.0071768760681152</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.9556326866149902</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.4128022193908691</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -5.350131511688232</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.0119086503982544</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -7.364029407501221</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.4504564702510834</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.4451656341552734</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.2700072228908539</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.887110471725464</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.07787823677063</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.212005138397217</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.96578049659729</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.404173374176025</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -4.017483234405518</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_5"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt5-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.8205227851867676</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample5-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 2.293454170227051</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.454885721206665</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.8864667415618896</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.482280254364014</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.9708322286605835</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.024439573287964</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.5912857055664062</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.9762572646141052</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -7.61850643157959</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.5372060537338257</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.299461841583252</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.7858275771141052</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.04070782661438</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.4359731674194336</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.473958730697632</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 3.1212821006774902</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.044398546218872</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.7935272455215454</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.974624514579773</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_6"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt6-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.3475064039230347</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample6-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.840869426727295</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.10442850738763809</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.7869639992713928</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.1552600860595703</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.8730695843696594</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.5742576122283936</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.2205910682678223</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.4986895322799683</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.7867411971092224</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.2695557773113251</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.442645788192749</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.81925368309021</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.7141813039779663</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.552254557609558</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.013520992361009121</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.295864224433899</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.220916986465454</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.11725707352161407</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.36865004897117615</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_7"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt7-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.846020460128784</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample7-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.6036514043807983</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.747952461242676</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.37455660104751587</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.4028263092041016</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.870929479598999</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.7322144508361816</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.23940260708332062</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.0163259506225586</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.18266980350017548</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.03937070071697235</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.3742029070854187</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.5608707666397095</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.5372564792633057</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.6129279136657715</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.638425350189209</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.2192660570144653</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.3501521348953247</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.3702831268310547</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.622813880443573</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_8"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt8-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.17330405116081238</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample8-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.385055065155029</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.6925855875015259</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.766592502593994</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.277927875518799</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.10494868457317352</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.1981029510498047</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.5007327795028687</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -1.611547589302063</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.6357578039169312</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.47467929124832153</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.0344536304473877</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.180548667907715</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.4940202236175537</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.09250921756029129</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.9719516634941101</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.2615301012992859</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.2799710035324097</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 0.40404507517814636</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.5949799418449402</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_9"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt9-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.8415135145187378</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample9-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.28201961517334</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.357722759246826</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.2524755001068115</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -5.557488441467285</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.1209978386759758</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -8.691038131713867</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.1647343784570694</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.0591462850570679</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.5847303867340088</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -8.592040061950684</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -5.446238994598389</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -5.948790073394775</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.47413158416748047</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.2895939350128174</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.8056046962738037</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -5.162099838256836</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -3.957828998565674</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.1743245124816895</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.39775583148002625</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_10"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt10-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.9286584854125977</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample10-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.2784547209739685</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.5193047523498535</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.6971662044525146</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.465541362762451</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -2.6957595348358154</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -7.483841896057129</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.6401220560073853</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -0.4168172776699066</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 2.812771797180176</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: 1.1144832372665405</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.4727628231048584</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 0.42018577456474304</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -6.874760627746582</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 1.0885206460952759</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -3.9610931873321533</p>
+                <p>User preference: Similar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.3218143582344055</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -2.6971068382263184</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.6091254949569702</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -4.111037254333496</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanAct12 (left) VS MDM (right): "action_class_11"</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/gt/gt11-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p>Critic score: -1.7723952531814575</p>
+                <p style="color: red; font-weight: bold;">User preference: Better</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_full/step0-blue/step0-sample11-9.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: -0.5641704201698303</p>
+                <p>User preference: Worse</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr class="divider">
+
+
+
+
+</body>
+
+</html>
