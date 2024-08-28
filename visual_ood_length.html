@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional visualizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;
+            justify-content: center;*/
+
+            background-color: #ffffff;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 10px;
+            font-size: 40px;
+            align-self: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .author {
+            margin: 10px 0;
+            font-size: 18px;
+            align-self: center;
+        }
+
+        .intro {
+            margin: 20px 0 20px 0;
+            font-size: 18px;
+            max-width: 1000px;
+            align-self: center;
+        }
+
+        .descript {
+            margin: 20px 0 20px 250px;
+            font-size: 20px;
+            max-width: 1000px;
+            align-self: left;
+            font-weight: bold;
+            color: #2a5ab4;
+        }
+
+        .video {
+            display: grid;
+            align-self: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .video-item {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .video video {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .video-row {
+            margin-bottom: 40px;
+            width: 70%;
+            align-self: center;
+        }
+
+        .divider {
+            width: 80%;
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, #ffffff, #000000, #ffffff);
+            margin: 40px 0 0 0;
+            align-self: center;
+        }
+
+        .caption {
+            margin-top: 5px;
+            font-size: 20px;
+            text-align: left;
+            color: #000000;
+        }
+
+        table {
+            margin: 10px 0 10px 0;
+            width: 100%;
+            align-self: center;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: none;
+        }
+
+        .vertical-header {
+            font-weight: bold;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .vertical-header th {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- next section hier -->
+    <h1>User Study Results between HumanAct12 GT and MDM Samples</h1>
+    <div class="intro">
+        In this part, we examine MotionCritic's performance on AMASS motions with different lengths. Critic scores
+        are produced on input motions with full, extracted and cut lengths.
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 002487</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 82</p>
+                <p>Critic score: 8.1562357081566e-05</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 1.4824496507644653</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-0.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -0.9746595025062561</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 001118</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 200</p>
+                <p>Critic score: 0.0025304192677140236</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 4.565812110900879</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: 4.188781261444092</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 001764</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 182</p>
+                <p>Critic score: 0.005232297815382481</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: 2.260854721069336</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 2.324557065963745</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 000667</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 123</p>
+                <p>Critic score: 0.006325804628431797</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -0.11632374674081802</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-8.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 2.8262476921081543</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 001903</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-12.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 179</p>
+                <p>Critic score: 0.006469425745308399</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-12.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: 1.7822400331497192</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-12.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 1.7993979454040527</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 003799</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-14.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 72</p>
+                <p>Critic score: 0.008302115835249424</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-14.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: 2.25040602684021</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-14.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 3.239696502685547</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 002004</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-15.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 153</p>
+                <p>Critic score: 0.013564431108534336</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-15.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 0.5837376713752747</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-15.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -0.9328438639640808</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="descript">HumanML3D from AMASS, motion id 001454</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-17.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 151</p>
+                <p>Critic score: 0.01528474036604166</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-17.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: 2.1326241493225098</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-17.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 3.162536859512329</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="descript">HumanML3D from AMASS, motion id 001384</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-21.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 109</p>
+                <p>Critic score: 0.018145285546779633</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-21.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 3.198594093322754</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-21.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: 1.7200391292572021</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="descript">HumanML3D from AMASS, motion id 001707</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-26.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 200</p>
+                <p>Critic score: 0.018932662904262543</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-26.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -0.42994001507759094</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-26.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 3.9290833473205566</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 000324</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-27.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 0.02835460752248764</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-27.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 0.02835460752248764</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-27.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 0.02835460752248764</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 001164</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-29.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 200</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 0.03243621438741684</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-29.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -1.7030850648880005</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-29.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -0.7679762244224548</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 001819</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-32.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 176</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 0.03973744064569473</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-32.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -3.99839448928833</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-32.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -4.514741897583008</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 002426</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-38.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 200</p>
+                <p>Critic score: 0.048481546342372894</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-38.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 1.7105931043624878</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-38.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: -0.2774490416049957</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 000946</div>
+    <div class="video">
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/normal/amass_motion_back-39.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion GT Full Length</b></p>
+                <p>Motion length: 101</p>
+                <p>Critic score: 0.0512404665350914</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_60/amass_motion_back-39.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Extracted 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p>Critic score: 1.9469777345657349</p>
+            </div>
+        </div>
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_ood/noisy_0.0/amass_motion_back-39.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p><b>Motion Cut First 60 Frames</b></p>
+                <p>Motion length: 60</p>
+                <p style="color: blue; font-weight: bold;">Critic score: 4.538766384124756</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+    <hr class="divider">
+
+
+
+
+</body>
+
+</html>
