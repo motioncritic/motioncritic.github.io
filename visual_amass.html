@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional visualizations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            /*align-items: center;
+            justify-content: center;*/
+
+            background-color: #ffffff;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 10px;
+            font-size: 40px;
+            align-self: center;
+            margin: 40px 0 20px 0;
+        }
+
+        .author {
+            margin: 10px 0;
+            font-size: 18px;
+            align-self: center;
+        }
+
+        .intro {
+            margin: 20px 0 20px 0;
+            font-size: 18px;
+            max-width: 1000px;
+            align-self: center;
+        }
+
+        .descript {
+            margin: 20px 0 20px 250px;
+            font-size: 20px;
+            max-width: 1000px;
+            align-self: left;
+            font-weight: bold;
+            color: #2a5ab4;
+        }
+
+        .video {
+            display: grid;
+            align-self: center;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .video-item {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .video video {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .video-row {
+            margin-bottom: 40px;
+            width: 70%;
+            align-self: center;
+        }
+
+        .divider {
+            width: 80%;
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, #ffffff, #000000, #ffffff);
+            margin: 40px 0 0 0;
+            align-self: center;
+        }
+
+        .caption {
+            margin-top: 5px;
+            font-size: 20px;
+            text-align: left;
+            color: #000000;
+        }
+
+        table {
+            margin: 10px 0 10px 0;
+            width: 100%;
+            align-self: center;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border: none;
+        }
+
+        .vertical-header {
+            font-weight: bold;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .vertical-header th {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- next section hier -->
+    <h1>AMASS GT Visulization</h1>
+    <div class="intro">
+        In this part, we will show videos of from HumanAct12 ground truth their critic scores. Typical examples
+        demonstrate that actions with lowest scores were indeed outliers violating physical
+        constraints such as gravity, often due to unreasonable object interactions when considering only the motion.
+        Conversely, the system was also able to assign relatively high scores to previously unseen complex motions.
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 002677</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/low_1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: red; font-weight: bold;">Critic score: -16.789180755615234</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="descript">HumanML3D from AMASS, motion id 002603</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/low_2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: red; font-weight: bold;">Critic score: -12.749826431274414</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 001096</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/low_3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: red; font-weight: bold;">Critic score: -12.77638053894043</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="descript">HumanML3D from AMASS, motion id 000649</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/low_4.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: red; font-weight: bold;">Critic score: -12.838809967041016</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 002014</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/low_5.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: red; font-weight: bold;">Critic score: -13.915456771850586</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="descript">HumanML3D from AMASS, motion id 000416</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/low_6.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: red; font-weight: bold;">Critic score: -14.838180541992188</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 001444</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/low_7.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: red; font-weight: bold;">Critic score: -15.517463684082031</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 000423</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/high_1.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 10.18864917755127</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="descript">HumanML3D from AMASS, motion id 000905</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/high_2.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 10.4847993850708</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="descript">HumanML3D from AMASS, motion id 000766</div>
+    <div class="video">
+
+        <div class="video-item">
+            <video controls autoplay loop muted>
+                <source src="videos_amass/high_3.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                <p style="color: blue; font-weight: bold;">Critic score: 10.672083854675293</p>
+                <!-- <p>User preference: Worse</p> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr class="divider">
+
+
+
+
+</body>
+
+</html>
